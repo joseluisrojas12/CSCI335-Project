@@ -1,0 +1,44 @@
+
+I can put as many lines of comments above where it says "num operations" below. 
+From there to the end of the file there must be input lines to be read.
+
+NUM_OPERATIONS 40
+2 8
+2 16
+2 4
+1 15
+0 11
+1 12
+1 10
+2 18
+1 14
+0 12
+0 5
+0 16
+0 8
+0 3
+2 5
+1 16
+1 6
+1 10
+1 19
+0 15
+1 15
+1 17
+0 7
+2 18
+0 19
+1 2
+0 13
+2 7
+0 1
+1 2
+0 19
+2 17
+0 11
+1 15
+1 13
+1 1
+1 18
+2 14
+0 15

@@ -1,0 +1,172 @@
+//Hello Mr Garrett
+//I write you what I understand and start with the skeleton of the assignment.
+
+class Matrix
+{
+ public:
+        virtual double multiply()=0;
+        void initializing();
+        void modifying()
+            {
+             if(--truncate_invalid_matrix_pairs())
+             //then modify a pair of matrices before multiply them when their sizes are incompatible.
+        void accessing();
+        bool equals();
+ 
+ protected:
+ 
+ };
+ 
+ //MatrixOperator relies on a class called Matrix
+ 
+ class MatrixOperator : public Matrix
+ {
+  public:
+         virtual double multiply()
+         {
+          //in this function will multiply two matrices and return result values to be safe in 
+          //file --results_output_fname
+          return product_of_them;
+         }
+   
+         bool --truncate_invalid_matrix_pairs();
+  };
+  
+//...class Operation is to set the namespace and get the main.cpp arguments
+
+#include<cstdint>
+#include<fstream>
+#include<iostream>
+#include<string.h>
+
+#define ADD 0
+#define SUB 1
+#define MUL 2
+#define DIV 3
+
+using std::cout;
+
+namespace JoseRojasCSCI335
+{
+ class Operation
+ {
+  public:
+        Operation(int argc, char **argv);
+        int64_t doOperation(int64_t type, int64_t value);
+  private:
+         int64_t currentValue;   //I think I must change this one to use with templates.
+  };
+ }
+ 
+namespace JoseRojasCSCI335
+{
+ int64_t currentValue;    //must be use templates
+ Operation::Operation(int argc, char **argv)
+ {
+  currentValue=0;
+ }
+ 
+ int64_t Operation::doOperation(int64_t type, int64_t value)
+ {
+  int64_t g;
+  switch(type)
+  {
+   case ADD:
+           currentValue+= value;
+           break;
+   case SUB:
+           currentValue-= value;
+           break;
+   case MUL:
+           currentValue*= value;
+           break;
+   case DIV:
+           currentValue/= value;
+           break;
+   default:
+           cout<<"Invalid operation type.\n";
+           exit(1);
+  }
+  return currentValue;
+ }
+} 
+ 
+ 
+  
+//...and for the class MatrixOperationBatchTester
+ 
+
+#include<cstdint>
+#include<cstdlib>
+#include<string.h>
+#include<fstream>
+#include<iostream>
+#include "Operation.h"
+using std::ifstream;
+using std::ofstream;
+using std::cout;
+
+{
+ class MatrixOperationBatchTester
+  {
+   std::string inputFilename;
+   std::string outputFilename;
+   std::string dataType;
+   public:
+          MatrixOperationBatchTester(int argc, char **argv);
+   private:
+          bool setOptions(int argc,char **argv);
+          int parseInteger(std::string sval);
+          std::pair<int,int> parseMatrixDimensions(std::ifstream &ifile);
+          int parseNMatrices(std::ifstream &ifile);
+          
+          //Instead of these three...
+          //char --matrix_input_fname[200];   //name of the file to be read
+          //char --results_output_fname[200]; //name of file to write results
+          //char --matrix_data_type[10];      //name of kind of value identified in the matrix
+          //I use the following functions:
+          
+          template <class T> Matrix<T>* loadInputMatrices();
+          template <class T> void runTest (int argc,char **argv);
+          template <class T> void saveOutputMatrix(Matrix<T> c);
+                   
+  };
+}
+
+#include "MatrixOperationBatchTester.h"
+using namespace std;   
+{
+
+ MatrixOperationBatchTester::MatrixOperationBatchTester(int argc,char **argv)
+ {
+  //constructor that initialize the options based on the command line arguments 
+ }
+
+ bool MatrixOperationBatchTester::setOptions(int argc, char **argv)
+ {
+   //set the different options for the operation of the batch tester using the command line arguments
+        
+ }
+ 
+ int MatrixOperationBatchTester::parseInteger(string sval)
+ {
+  //get numerical value contained in a string
+ }
+ 
+ pair<int,int> MatrixOperationBatchTester::parseMatrixDimensions(ifstream &ifile)
+ {
+  //get the number of rows and columns on the file
+ }
+ 
+ int MatrixOperationBatchTester::parseNMatrices(ifstream &ifile)
+ {
+  //parses the line in the file to get the number of matrices saved in the file
+ }
+ 
+ 
+ 
+}
+   
+   
+    
+   

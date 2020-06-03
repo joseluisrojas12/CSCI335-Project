@@ -1,0 +1,45 @@
+This example matrix input file conforms to the specification indicated in the 
+project specification. It should be able to be read as-is. These first several
+lines are skipped when parsing this matrix input file. The first matrix is a
+2x3 matrix having the form:
+
+2 1 5
+1 3 2
+
+Here is that matrix:
+
+NUM_MATRICES 3
+NUM_ROWS 2
+NUM_COLUMNS 3
+2
+1
+5
+1
+3
+2
+
+Notice that comments can occur in between matrices. Above was the first matrix.
+Here is the second matrix. Notice that the specification allows for the number 
+of columns and the number of rows to be specified in either order, as long as
+the one occurs immediately after the other, plus the elements of the matrix
+occur immediate after the number of columns and rows is specified.
+
+NUM_COLUMNS 2
+NUM_ROWS 3
+3
+4
+-1
+2
+2
+1
+
+The last matrix given is the product of the first two. If your program successfully
+multiplied the above two matrices then the results output file would be identical to the
+lines given below.
+
+NUM_ROWS 2
+NUM_COLUMNS 2
+15
+15
+4
+12

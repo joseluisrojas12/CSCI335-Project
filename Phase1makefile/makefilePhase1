@@ -1,0 +1,13 @@
+all:	phase1
+
+phase1:	phase1.o OperationFile.o
+	g++ -o phase1 phase1.o OperationFile.o
+
+phase1.o:	phase1.cpp
+	g++ -c -g -std=c++11 -MMD -MP -MF phase1.o.d -o phase1.o phase1.cpp
+
+OperationFile.o:	OperationFile.cpp
+	g++ -c -g -std=c++11 -MMD -MP -MF OperationFile.o.d -o OperationFile.o OperationFile.cpp
+	
+clean:
+	rm -f *.o phase1
